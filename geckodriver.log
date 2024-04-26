@@ -1,0 +1,99 @@
+1713952362275	geckodriver	INFO	Listening on 127.0.0.1:47329
+1713952362851	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ng" "--remote-debugging-port" "35483" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilecqHM1k"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1713952364227	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag -no-sandbox\n"
+console.error: "Warning: unrecognized command line flag -ignore-certificate-errors\n"
+console.error: "Warning: unrecognized command line flag -log-level\n"
+console.error: "Warning: unrecognized command line flag -disable-notifications\n"
+1713952364396	Marionette	INFO	Listening on port 46493
+WebDriver BiDi listening on ws://127.0.0.1:35483
+Read port: 46493
+1713952364715	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1713952364746	RemoteAgent	INFO	Proxy settings initialised: {"proxyType":"manual","httpProxy":"127.0.0.1:32827","sslProxy":"127.0.0.1:32827"}
+console.error: ({})
+DevTools listening on ws://127.0.0.1:35483/devtools/browser/a89663f6-c268-409b-9024-90f3b6f117cd
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3i_8K4/yV/l/en_US/806OU2p6Shf.js?_nc_x=Ij3Wp8lg5Kz, line 112: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+libva info: VA-API version 1.20.0
+libva info: Trying to open /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_20
+libva info: va_openDriver() returns 0
+console.error: "update.locale" " file doesn't exist in either the application or GRE directories"
+1713952394248	addons.xpi	ERROR	System addon update list error SyntaxError: The URI is malformed.
+libva info: VA-API version 1.20.0
+libva info: Trying to open /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_20
+libva info: va_openDriver() returns 0
+libva info: VA-API version 1.20.0
+libva info: Trying to open /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_20
+libva info: va_openDriver() returns 0
+libva info: VA-API version 1.20.0
+libva info: Trying to open /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_20
+libva info: va_openDriver() returns 0
+libva info: VA-API version 1.20.0
+libva info: Trying to open /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_20
+libva info: va_openDriver() returns 0
+libva info: VA-API version 1.20.0
+libva info: Trying to open /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_20
+libva info: va_openDriver() returns 0
+libva info: VA-API version 1.20.0
+libva info: Trying to open /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_20
+libva info: va_openDriver() returns 0
+libva info: VA-API version 1.20.0
+libva info: Trying to open /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_20
+libva info: va_openDriver() returns 0
+libva info: VA-API version 1.20.0
+libva info: Trying to open /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_20
+libva info: va_openDriver() returns 0
+libva info: VA-API version 1.20.0
+libva info: Trying to open /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_20
+libva info: va_openDriver() returns 0
+libva info: VA-API version 1.20.0
+libva info: Trying to open /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_20
+libva info: va_openDriver() returns 0
+libva info: VA-API version 1.20.0
+libva info: Trying to open /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_20
+libva info: va_openDriver() returns 0
+libva info: VA-API version 1.20.0
+libva info: Trying to open /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_20
+libva info: va_openDriver() returns 0
+libva info: VA-API version 1.20.0
+libva info: Trying to open /usr/lib/x86_64-linux-gnu/dri/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_20
+libva info: va_openDriver() returns 0
+1713952505361	Marionette	INFO	Stopped listening on port 46493
+1713957235559	geckodriver	INFO	Listening on 127.0.0.1:41833
+1713957236128	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ng" "--remote-debugging-port" "58547" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile990UCK"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1713957237466	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag -no-sandbox\n"
+console.error: "Warning: unrecognized command line flag -ignore-certificate-errors\n"
+console.error: "Warning: unrecognized command line flag -log-level\n"
+console.error: "Warning: unrecognized command line flag -disable-notifications\n"
+1713957237621	Marionette	INFO	Listening on port 36919
+Read port: 36919
+WebDriver BiDi listening on ws://127.0.0.1:58547
+1713957237745	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1713957237782	RemoteAgent	INFO	Proxy settings initialised: {"proxyType":"manual","httpProxy":"127.0.0.1:40759","sslProxy":"127.0.0.1:40759"}
+console.error: ({})
+DevTools listening on ws://127.0.0.1:58547/devtools/browser/abc93733-79be-4ef4-88f8-0c8c45c953d7
+console.error: "update.locale" " file doesn't exist in either the application or GRE directories"
+1713957267484	addons.xpi	ERROR	System addon update list error SyntaxError: The URI is malformed.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
