@@ -50,7 +50,7 @@ class YouTubeAPIWrapper:
             request = self.youtube.commentThreads().list(
                 part='snippet',
                 videoId=video_id,
-                maxResults=10  # Nombre maximal de commentaires à récupérer
+                maxResults=100  # Nombre maximal de commentaires à récupérer
             )
             while request:
                 response = request.execute()
@@ -83,7 +83,7 @@ if __name__ == "__main__":
     youtube_api = YouTubeAPIWrapper(api_key)
 
     # Recherche de vidéos sur le football
-    query = 'education au benin'
+    query = '#education#benin'
     benin_education_videos = youtube_api.search_videos(query)
 
     # Enregistrement des résultats dans un fichier Excel
