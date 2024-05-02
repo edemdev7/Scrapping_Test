@@ -1,22 +1,23 @@
-import pandas as pd
 from google_play_scraper import app
 
-# Obtenir les données de l'application
-result = app(
-    'com.nianticlabs.pokemongo',
-    lang='en', # langue par défaut 'en'
-    country='us' # pays par défaut 'us'
-)
+import pandas as pd
 
-# Créer un DataFrame à partir des données
-df = pd.DataFrame([result])
+import numpy as np 
 
-# Enregistrer le DataFrame dans un fichier Excel
-excel_file = "app_data.xlsx"
-df.to_excel(excel_file, index=False)
+from google_play_scraper import Sort, reviews_all
 
-# Afficher les données dans la console
-print("Données de l'application :")
-print(df)
 
-print(f"Données de l'application enregistrées dans le fichier Excel : {excel_file}")
+us_reviews = reviews_all(
+    'bj.sbin.mobilemoney.customer',
+    sleep_milliseconds=0, # defaults to 0
+    lang='fr', # defaults to 'en'
+    country='bj', # defaults to 'us'
+    sort=Sort.NEWEST, # defaults to Sort.MOST_RELEVANT
+) 
+
+df_busu = pd.DataFrame(np.array(us_reviews),columns=['review'])
+df_busu = df_busu.join(pd.DataFrame(df_busu.pop('review').tolist()))
+df_busu.head() 
+
+excel_file = ".xlsx"
+df_busu.to_excel(excel_file, index=False)
