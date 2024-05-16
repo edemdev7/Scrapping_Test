@@ -1,3 +1,0 @@
-client_id='Pwp8F1QtppU6ZKE5c5221Q'
-secret='_v42quaoSAYiakhW9W4tnjfibeLiKA'
-user_agent='Scrapping'
