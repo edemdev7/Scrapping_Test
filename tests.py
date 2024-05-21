@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from tensorflow.keras.preprocessing.text import Tokenizer
@@ -38,9 +39,84 @@ model = Sequential([
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
 # Entraîner le modèle
-model.fit(X_train_padded, y_train, epochs=10, batch_size=32)
+#model.fit(X_train_padded, y_train, epochs=10, batch_size=32)
+history = model.fit(X_train_padded, y_train, validation_split=0.2, epochs=10, batch_size=32)
 
-# Évaluer le modèle sur les données de test
-loss, accuracy = model.evaluate(X_test_padded, y_test)
-print("Loss:", loss)
-print("Accuracy:", accuracy)
+"""
+# graphe loss
+plt.plot(history.history['loss'], label='loss')
+plt.plot(history.history['val_loss'], label='val_loss')
+
+plt.legend()
+plt.show()
+
+plt.savefig("Loss.jpg")
+
+#graphe accuracy
+
+plt.plot(history.history['accuracy'], label='acc')
+plt.plot(history.history['val_accuracy'], label='val_acc')
+plt.legend()
+plt.show()
+
+plt.savefig("Accuracy.jpg")
+ 
+
+def predict_sentiment(text, model, tokenizer, label_encoder):
+    # Tokenize and pad the input text
+    sequence = tokenizer.texts_to_sequences([text])
+    padded_sequence = pad_sequences(sequence, maxlen=max_sequence_length, padding='post')
+    
+    # Predict the sentiment label
+    predicted_prob = model.predict(padded_sequence)[0][0]
+    
+    # Convert predicted probability to label
+    predicted_label = 1 if predicted_prob >= 0.5 else 0
+    
+    # Convert label to sentiment category
+    sentiment_category = label_encoder.inverse_transform([predicted_label])[0]
+    
+    return sentiment_category
+
+text = ""
+predicted_label = predict_sentiment(text, model, tokenizer, label_encoder)
+print("Predicted sentiment:", predicted_label)
+"""
+
+def predict_sentiment(text, model, tokenizer, label_encoder):
+    if not isinstance(text, str):
+        return None  # Skip or handle non-string values appropriately
+    
+    # Tokenize and pad the input text
+    sequence = tokenizer.texts_to_sequences([text])
+    padded_sequence = pad_sequences(sequence, maxlen=max_sequence_length, padding='post')
+    
+    # Predict the sentiment label
+    predicted_prob = model.predict(padded_sequence)[0][0]
+    
+    # Convert predicted probability to label
+    predicted_label = 1 if predicted_prob >= 0.5 else 0
+    
+    # Convert label to sentiment category
+    sentiment_category = label_encoder.inverse_transform([predicted_label])[0]
+    
+    return sentiment_category
+
+def annotate_excel_file(input_file, output_file):
+    # Load the Excel file into a pandas DataFrame
+    df = pd.read_excel(input_file)
+    
+    # Ensure the text column is named 'texte_nettoye'
+    if 'texte_nettoye' not in df.columns:
+        raise ValueError("The input Excel file must contain a column named 'texte_nettoye'.")
+
+    # Iterate over each row and predict the sentiment
+    df['sentiment'] = df['texte_nettoye'].apply(lambda text: predict_sentiment(text, model, tokenizer, label_encoder))
+
+    # Save the updated DataFrame back to an Excel file
+    df.to_excel(output_file, index=False)
+
+# Example usage
+input_file = '/home/edemdev/Edem/Stage/PYTHON_NPL/Scrapping_Test/Dataset_nettoye/Mtn_app.xlsx'
+output_file = 'output_file.xlsx'
+annotate_excel_file(input_file, output_file)
