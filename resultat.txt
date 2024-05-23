@@ -1,0 +1,17 @@
+Analyse
+Classe Negative :
+
+La précision est élevée (0.86), ce qui signifie que la plupart des prédictions de la classe négative sont correctes.
+Le rappel est plus faible (0.58), indiquant que le modèle a manqué plusieurs échantillons de la classe négative.
+
+Classe Neutral :
+
+La précision est modérée (0.76), mais le rappel est très élevé (0.93), ce qui signifie que le modèle identifie correctement la plupart des échantillons de cette classe.
+La classe neutral a le plus grand support, ce qui peut aider à expliquer les bonnes performances.
+
+Classe Positive :
+
+La précision est modérée (0.78), mais le rappel est plus faible (0.55), indiquant que le modèle manque plusieurs échantillons de la classe positive.
+Améliorations Potentielles
+
+Les méthodes kernel...

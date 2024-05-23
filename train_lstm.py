@@ -122,7 +122,7 @@ plt.legend()
 plt.show()
 
 plt.savefig("Accuracy.jpg")
-"""
+
 # Fonction pour prédire le sentiment d'un texte donné
 def predict_sentiment(text, selected_text):
     text_sequence = tokenizer.texts_to_sequences([text.lower()])
@@ -137,3 +137,4 @@ def predict_sentiment(text, selected_text):
 text = "the app doesn't load it's the most useless app i've ever used mtn is becoming nonsense \u0001f92c"
 selected_text = "Nice"
 print(" sentiment:", predict_sentiment(text, selected_text))
+"""

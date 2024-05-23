@@ -1,4 +1,0 @@
-Sentiment,Total Examples,Accuracy,Loss
-negative,1562,0.7272727272727273,-1
-neutral,2230,0.8556053811659193,-1
-positive,1705,0.8375366568914956,-1
