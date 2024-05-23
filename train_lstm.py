@@ -7,6 +7,7 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import LSTM, Dense, Embedding, Input, Concatenate
 
+
 # Charger les données à partir du fichier CSV
 data = pd.read_csv("train_sortie.csv")
 

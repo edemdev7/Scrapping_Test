@@ -5,10 +5,13 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report
 
 # Charger les données à partir du fichier CSV
-data = pd.read_csv('all-data.csv')
+data = pd.read_csv("train.csv", encoding='latin-1')
+
+# Remplacer les valeurs manquantes par une chaîne vide
+data['text'].fillna('', inplace=True)
 
 # Diviser les données en fonction de l'entrée et de la sortie
-X = data['texte']
+X = data['text']
 y = data['sentiment']
 
 # Convertir le texte en une représentation numérique

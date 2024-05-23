@@ -6,14 +6,14 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
 # Charger le dataset
-data = pd.read_csv('all-data.csv')
+data = pd.read_csv("train.csv", encoding='latin-1')
 
-# Remplir les valeurs manquantes dans la colonne 'texte'
-# data['texte'].fillna('', inplace=True)
+# Remplacer les valeurs manquantes par une chaîne vide
+data['text'].fillna('', inplace=True)
 
 # Vectoriser les textes
 vectorizer = CountVectorizer()
-X = vectorizer.fit_transform(data['texte'])
+X = vectorizer.fit_transform(data['text'])
 
 # Encoder les étiquettes de classe
 label_encoder = LabelEncoder()
