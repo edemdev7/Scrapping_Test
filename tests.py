@@ -8,7 +8,7 @@ from tensorflow.keras.layers import LSTM, Dense, Embedding
 from tensorflow.keras.losses import CategoricalCrossentropy
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-import demoji
+from googletrans import Translator
 
 # Charger les données à partir du fichier CSV
 data = pd.read_csv("train.csv", encoding='latin-1')
@@ -16,8 +16,8 @@ data = pd.read_csv("train.csv", encoding='latin-1')
 # Remplacer les valeurs manquantes par une chaîne vide
 data['text'].fillna('', inplace=True)
 # Prétraitement des emojis
-demoji.download_codes()  # Télécharger le répertoire d'emojis
-data['text'] = data['text'].apply(lambda x: demoji.replace(x, ""))
+#demoji.download_codes()  # Télécharger le répertoire d'emojis
+#data['text'] = data['text'].apply(lambda x: demoji.replace(x, ""))
 
 
 # Convertir les étiquettes de sentiment en valeurs numériques
@@ -52,12 +52,15 @@ model = Sequential([
 model.compile(optimizer='adam', loss=CategoricalCrossentropy(), metrics=['accuracy'])
 
 # Entraîner le modèle
-history = model.fit(X_train_padded, y_train, validation_split=0.2, epochs=10, batch_size=32)
+history = model.fit(X_train_padded, y_train, validation_split=0.2, epochs=100, batch_size=32)
 
 # Évaluer le modèle
 loss, accuracy = model.evaluate(X_test_padded, y_test)
 print(f"Test Loss: {loss}")
 print(f"Test Accuracy: {accuracy}")
+
+
+
 
 
 def predict_sentiment(model, tokenizer, excel_file, output_file):
@@ -91,5 +94,6 @@ def predict_sentiment(model, tokenizer, excel_file, output_file):
     
     print("Prédictions de sentiment ajoutées au fichier Excel avec succès.")
 
+
 # Utilisation de la fonction pour prédire les sentiments dans un fichier Excel
-predict_sentiment(model, tokenizer, "/home/edemdev/Edem/Stage/PYTHON_NPL/Scrapping_Test/Dataset_nettoye/facebook_mtn_internet.xlsx", "LSTM/fb_internet_mtn_LSTM_sortie.xlsx")
+predict_sentiment(model, tokenizer, "/home/edemdev/Edem/Stage/PYTHON_NPL/Scrapping_Test/Dataset_nettoye/celtisss.xlsx", "LSTM/celtiis_LSTM_sortie.xlsx")
